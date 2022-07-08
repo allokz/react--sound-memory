@@ -6,6 +6,11 @@
   padding-bottom: 1rem;
 }
 
+h1 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-style: italic;
+}
+
 header {
   padding: 1rem 2rem;
   display: flex;

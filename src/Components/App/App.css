@@ -1,38 +1,37 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='32' height='32' patternTransform='scale(2) rotate(55)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(140, 15%, 27%, 1)'/><path d='M40 16h-6m-4 0h-6m8 8v-6m0-4V8M8 16H2m-4 0h-6m8 8v-6m0-4V8'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(142, 15%, 32%, 0.79)' fill='none'/><path d='M16-8v6m0 4v6m8-8h-6m-4 0H8m8 24v6m0 4v6m8-8h-6m-4 0H8'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(34, 66%, 65%, 0.18)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  color: #F5F5F5;
+  font-family: sans-serif;
   min-height: 100vh;
+}
+
+header {
+  padding: 2rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+header button {
+  background-color: transparent;
+  border: none;
+  color: #F5F5F5;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+header button img {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
 }

@@ -8,7 +8,10 @@ function App() {
     const generateCards = numberOfCards => {
         const cards = [];
         for (let i = 0; i < numberOfCards; i++) {
-            cards.push({id: i});
+            cards.push({
+                id: i,
+                name: i
+            });
         }
         return cards;
     }

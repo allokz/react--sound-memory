@@ -1,0 +1,15 @@
+#playing-field {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: fit-content;
+    border: 0.5rem solid #455E4E;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media only screen and (max-width: 850px) {
+    #playing-field {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

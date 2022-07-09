@@ -6,8 +6,13 @@ import { PlayingField } from '../PlayingField/PlayingField';
 function App() {
     const numberOfCards = 20;
 
-    const generateCards = numberOfCards => {
-        const cards = [];
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+            [array[i], array[j]] = [array[j], array[i]]; // the same as: let temp = array[i]; array[i] = array[j]; array[j] = temp;
+        }
+        return array;
+    }
         for (let i = 0; i < numberOfCards; i++) {
             cards.push({
                 id: i,

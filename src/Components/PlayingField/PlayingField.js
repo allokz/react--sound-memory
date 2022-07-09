@@ -19,7 +19,7 @@ export function PlayingField(props) {
     const numberOfOpenCards = openCards.length;
 
     return (
-        <section>
+        <section id='playing-field-section'>
             <div id="game-info" className='playing-field'>
                 {props.cards.length === 0 ? <p>Please hit 'New Game'</p> : (
                     <div>

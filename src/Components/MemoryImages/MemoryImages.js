@@ -3,6 +3,7 @@ import './MemoryImages.css';
 import { Card } from '../Card/Card';
 
 export function MemoryImages(props) {
+    const [cards, setCards] = useState([]);
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -11,5 +12,23 @@ export function MemoryImages(props) {
         }
         return array;
     }
-    
+
+
+    return (
+        <section id='gameApp'>
+            <div id='stats'>
+                images memory
+            </div>
+            <div id='cards'>
+                {
+                    cards.map(card => {
+                        <Card 
+                            key={card.id}
+                            card={card}
+                        />
+                    })
+                }
+            </div>
+        </section>
+    )
 }

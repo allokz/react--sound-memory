@@ -10,7 +10,9 @@ function App() {
     const [activeGame, setActiveGame] = useState(null);
 
     const imageMemory = (
-        <MemoryImages />
+        <MemoryImages
+            numberOfCards={numberOfCards}
+        />
     )
 
     const musicMemory = (
@@ -33,8 +35,6 @@ function App() {
         }
         return shuffle(cardDeck);
     }
-
-    
 
     const setVisibility = (cardId, value) => {
         const newCards = cards;

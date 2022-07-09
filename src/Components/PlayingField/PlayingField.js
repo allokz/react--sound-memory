@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './PlayingField.css';
 import { Card } from '../Card/Card';
 
 
 export function PlayingField(props) {
+    const [openCards, setOpenCards] = useState([]);
+
+    const addOpenCard = (id) => {
+        if (!openCards.includes(id)) {
+            setOpenCards(prev => [...prev, id]);
+        }
+    }
+
+    const resetNumberOfOpenCards = () => {
+        setOpenCards([]);
+    }
+
+    const numberOfOpenCards = openCards.length;
 
     return (
         <section>
@@ -19,8 +32,8 @@ export function PlayingField(props) {
                 )}
             </div>
             <div id="cards" className='playing-field'>
-            {
-                props.cards.map(card => {
+                {
+                    props.cards.map(card => {
                         return <Card 
                             key={card.id}
                             card={card}
@@ -28,8 +41,8 @@ export function PlayingField(props) {
                             resetOpenCards={resetNumberOfOpenCards}
                             numberOfOpenCards={numberOfOpenCards}
                         />
-                })
-            }
+                    })
+                }
             </div>
         </section>
     );

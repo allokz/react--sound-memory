@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import newGameIcon from './new-game.png';
 import { PlayingField } from '../PlayingField/PlayingField';
+import { MemoryImages } from '../MemoryImages/MemoryImages';
 
 
 function App() {
     const numberOfCards = 20;
-    const [cards, setCards] = useState([]);
+    const [activeGame, setActiveGame] = useState(null);
 
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
-            [array[i], array[j]] = [array[j], array[i]]; // the same as: let temp = array[i]; array[i] = array[j]; array[j] = temp;
-        }
-        return array;
-    }
+    const imageMemory = (
+        <MemoryImages />
+    )
 
+    const musicMemory = (
+        <p>music</p>
+    )
+
+    /*
     function createCardDeck(numberOfCards) {
         const cardDeck = [];
         let imageId = -1;
@@ -32,9 +34,7 @@ function App() {
         return shuffle(cardDeck);
     }
 
-    const handleClick = () => {
-        setCards(createCardDeck(numberOfCards));
-    }
+    
 
     const setVisibility = (cardId, value) => {
         const newCards = cards;
@@ -44,20 +44,23 @@ function App() {
         newCards[cardToChangeIndex] = cardToChange;
         setCards(newCards);
     }
+    */
 
     return (
         <div className="App">
             <header>
-                <h1>Sound Memory</h1>
+                <h1>Memory</h1>
                 <div>
-                    <button onClick={handleClick}>
-                        <img src={newGameIcon} alt='Reset icon' />
-                        New Game
+                    <button onClick={() => setActiveGame(imageMemory)}>
+                        Images
+                    </button>
+                    <button onClick={() => setActiveGame(musicMemory)}>
+                        Music
                     </button>
                 </div>
             </header>
             <main>
-                <PlayingField cards={cards} setVisibility={setVisibility} />
+                {activeGame}
             </main>
         </div>
     );

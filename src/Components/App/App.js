@@ -4,6 +4,7 @@ import { PlayingField } from '../PlayingField/PlayingField';
 
 
 function App() {
+    const numberOfCards = 20;
 
     const generateCards = numberOfCards => {
         const cards = [];

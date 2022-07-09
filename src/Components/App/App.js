@@ -26,7 +26,7 @@ function App() {
             cardDeck.push({
                 id: i,
                 image: imageId,
-                visibility: 'visible'
+                visibility: 'hidden'
             });
         }
         return shuffle(cardDeck);
@@ -34,6 +34,15 @@ function App() {
 
     const handleClick = () => {
         setCards(createCardDeck(numberOfCards));
+    }
+
+    const setVisibility = (cardId, value) => {
+        const newCards = cards;
+        const cardToChangeIndex = newCards.findIndex(card => card.id === cardId);
+        let cardToChange = newCards.find(card => card.id === cardId);
+        cardToChange.visibility = value;
+        newCards[cardToChangeIndex] = cardToChange;
+        setCards(newCards);
     }
 
     return (
@@ -48,7 +57,7 @@ function App() {
                 </div>
             </header>
             <main>
-                <PlayingField cards={cards} />
+                <PlayingField cards={cards} setVisibility={setVisibility} />
             </main>
         </div>
     );

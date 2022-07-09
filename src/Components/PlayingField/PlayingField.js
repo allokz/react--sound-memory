@@ -40,6 +40,7 @@ export function PlayingField(props) {
                             addOpenCard={addOpenCard}
                             resetOpenCards={resetNumberOfOpenCards}
                             numberOfOpenCards={numberOfOpenCards}
+                            setVisibility={props.setVisibility}
                         />
                     })
                 }

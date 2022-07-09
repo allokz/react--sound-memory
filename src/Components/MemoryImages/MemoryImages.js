@@ -34,7 +34,11 @@ export function MemoryImages(props) {
         <section id='gameApp'>
             <h2>Image Memory</h2>
             <div id='stats'>
-                images memory
+                stats
+                <br/>
+                <button onClick={() => createCards(props.numberOfCards)}>
+                    New Game
+                </button>
             </div>
             <div id='cards'>
                 {

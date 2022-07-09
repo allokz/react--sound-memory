@@ -31,19 +31,24 @@ function App() {
         }
         return shuffle(cardDeck);
     }
+
+    const handleClick = () => {
+        setCards(createCardDeck(numberOfCards));
     }
 
     return (
         <div className="App">
             <header>
                 <h1>Sound Memory</h1>
-                <button>
-                    <img src={newGameIcon} alt='Reset icon' />
-                    New Game
-                </button>
+                <div>
+                    <button onClick={handleClick}>
+                        <img src={newGameIcon} alt='Reset icon' />
+                        New Game
+                    </button>
+                </div>
             </header>
             <main>
-                <PlayingField cards={generateCards(20)} />
+                <PlayingField cards={cards} />
             </main>
         </div>
     );

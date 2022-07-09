@@ -39,7 +39,7 @@ export function MemoryImages(props) {
             <div id='cards'>
                 {
                     cards.map(card => {
-                        <Card 
+                        return <Card 
                             key={card.id}
                             card={card}
                         />

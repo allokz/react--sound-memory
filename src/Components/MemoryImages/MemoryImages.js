@@ -13,6 +13,22 @@ export function MemoryImages(props) {
         return array;
     }
 
+    function createCards(numberOfCards) {
+        const array = [];
+        let imageId = -1;
+        for (let i = 0; i < numberOfCards; i++) {
+            if (i % 2 == 0) {
+                imageId++;
+            }
+            array.push({
+                id: i,
+                image: imageId,
+                visibility: 'hidden'
+            });
+        }
+        setCards(shuffle(array));
+    }
+
 
     return (
         <section id='gameApp'>

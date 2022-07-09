@@ -32,6 +32,7 @@ export function MemoryImages(props) {
 
     return (
         <section id='gameApp'>
+            <h2>Image Memory</h2>
             <div id='stats'>
                 images memory
             </div>

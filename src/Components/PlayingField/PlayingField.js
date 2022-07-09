@@ -37,7 +37,7 @@ export function PlayingField(props) {
                         return <Card 
                             key={card.id}
                             card={card}
-                            incrementOpenCards={addOpenCard}
+                            addOpenCard={addOpenCard}
                             resetOpenCards={resetNumberOfOpenCards}
                             numberOfOpenCards={numberOfOpenCards}
                         />

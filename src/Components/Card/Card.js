@@ -24,7 +24,7 @@ export function Card(props) {
     const handleClick = () => {
         if (props.numberOfOpenCards < 2 && visibility === 'hidden') {
             setVisibility('visible');
-            props.incrementOpenCards(props.card.id);
+            props.addOpenCard(props.card.id);
         }
     }
 

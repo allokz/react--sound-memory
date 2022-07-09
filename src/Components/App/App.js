@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import newGameIcon from './new-game.png';
 import { PlayingField } from '../PlayingField/PlayingField';
@@ -5,6 +6,7 @@ import { PlayingField } from '../PlayingField/PlayingField';
 
 function App() {
     const numberOfCards = 20;
+    const [cards, setCards] = useState([]);
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -13,13 +15,22 @@ function App() {
         }
         return array;
     }
+
+    function createCardDeck(numberOfCards) {
+        const cardDeck = [];
+        let imageId = -1;
         for (let i = 0; i < numberOfCards; i++) {
-            cards.push({
+            if (i % 2 == 0) {
+                imageId++;
+            }
+            cardDeck.push({
                 id: i,
-                name: i
+                image: imageId,
+                visibility: 'visible'
             });
         }
-        return cards;
+        return shuffle(cardDeck);
+    }
     }
 
     return (

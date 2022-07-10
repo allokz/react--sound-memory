@@ -4,6 +4,7 @@ import { Card } from '../Card/Card';
 
 export function MemoryImages(props) {
     const [cards, setCards] = useState([]);
+    const [visibleCards, setVisibleCards] = useState([]);
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -29,14 +30,40 @@ export function MemoryImages(props) {
         setCards(shuffle(array));
     }
 
+    function addVisibleCard(cardId) {
+        console.log('addVisibleCard');
+        if (!visibleCards.includes(cardId) && visibleCards.length < 2) {
+            setVisibleCards(prev => [...prev, cardId]);
+        }
+    }
+
+    function removeVisibleCard(cardId) {
+        console.log('removeVisibleCard');
+        setVisibleCards(visibleCards.filter(id => id !== cardId));
+    }
+
+    const handleClick = () => {
+        createCards(props.numberOfCards);
+        setVisibleCards([]);
+    }
+
+
+    useEffect(() => {
+        let intervalId;
+        if (visibleCards.length === 2) {
+            intervalId = setInterval(() => setVisibleCards([]), 5000);
+        }
+        return () => clearInterval(intervalId);
+    });
+
 
     return (
         <section id='gameApp'>
             <h2>Image Memory</h2>
             <div id='stats'>
-                stats
+                visibleCards: {visibleCards}
                 <br/>
-                <button onClick={() => createCards(props.numberOfCards)}>
+                <button onClick={handleClick}>
                     New Game
                 </button>
             </div>
@@ -46,6 +73,9 @@ export function MemoryImages(props) {
                         return <Card 
                             key={card.id}
                             card={card}
+                            visibleCards={visibleCards}
+                            addVisibleCard={addVisibleCard}
+                            removeVisibleCard={removeVisibleCard}
                         />
                     })
                 }

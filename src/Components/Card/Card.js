@@ -4,28 +4,25 @@ import { images } from './images/index';
 
 
 export function Card(props) {
-    // const [visibility, setVisibility] = useState('hidden');
 
-    // switch visibility of image and the cursor style
     useEffect(() => {
         const card = document.getElementById(props.card.id);
 
-        card.firstElementChild.style.visibility = props.card.visibility;
-        
-        if (props.card.visibility === 'visible') {
+        if (props.visibleCards.includes(props.card.id)) {
+            console.log('if true');
+            card.firstElementChild.style.visibility = 'visible';
             card.style.cursor = 'default';
         } else {
+            console.log('if false');
+            card.firstElementChild.style.visibility = 'hidden';
             card.style.cursor = 'pointer';
         }
+    }, [props.visibleCards]);
 
-        // console.log('visibility of ' + props.card.id + ' = ' + visibility);
-    }, [props.card.visibility]);
 
     const handleClick = () => {
-        if (props.numberOfOpenCards < 2 && props.card.visibility === 'hidden') {
-            props.setVisibility(props.card.id, 'visible');
-            props.addOpenCard(props.card.id);
-        }
+        console.log('handleClick');
+        props.addVisibleCard(props.card.id);
     }
 
     return (

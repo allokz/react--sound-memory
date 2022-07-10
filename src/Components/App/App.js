@@ -20,21 +20,6 @@ function App() {
     )
 
     /*
-    function createCardDeck(numberOfCards) {
-        const cardDeck = [];
-        let imageId = -1;
-        for (let i = 0; i < numberOfCards; i++) {
-            if (i % 2 == 0) {
-                imageId++;
-            }
-            cardDeck.push({
-                id: i,
-                image: imageId,
-                visibility: 'hidden'
-            });
-        }
-        return shuffle(cardDeck);
-    }
 
     const setVisibility = (cardId, value) => {
         const newCards = cards;

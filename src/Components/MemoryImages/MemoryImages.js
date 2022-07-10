@@ -36,11 +36,6 @@ export function MemoryImages(props) {
         }
     }
 
-    function removeVisibleCard(cardId) {
-        console.log('removeVisibleCard');
-        setVisibleCards(visibleCards.filter(id => id !== cardId));
-    }
-
     const handleClick = () => {
         createCards(props.numberOfCards);
         setVisibleCards([]);

@@ -23,8 +23,7 @@ export function MemoryImages(props) {
             }
             array.push({
                 id: i,
-                image: imageId,
-                visibility: 'hidden'
+                image: imageId
             });
         }
         setCards(shuffle(array));

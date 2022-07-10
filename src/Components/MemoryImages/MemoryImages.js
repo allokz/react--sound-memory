@@ -29,10 +29,10 @@ export function MemoryImages(props) {
         setCards(shuffle(array));
     }
 
-    function addVisibleCard(cardId) {
+    function addVisibleCard(cardObj) {
         console.log('addVisibleCard');
-        if (!visibleCards.includes(cardId) && visibleCards.length < 2) {
-            setVisibleCards(prev => [...prev, cardId]);
+        if (!visibleCards.includes(cardObj) && visibleCards.length < 2) {
+            setVisibleCards(prev => [...prev, cardObj]);
         }
     }
 
@@ -55,7 +55,7 @@ export function MemoryImages(props) {
         <section id='gameApp'>
             <h2>Image Memory</h2>
             <div id='stats'>
-                visibleCards: {visibleCards}
+                visibleCards.length: {visibleCards.length}
                 <br/>
                 <button onClick={handleClick}>
                     New Game

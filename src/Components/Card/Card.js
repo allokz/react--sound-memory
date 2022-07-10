@@ -8,7 +8,7 @@ export function Card(props) {
     useEffect(() => {
         const card = document.getElementById(props.card.id);
 
-        if (props.visibleCards.includes(props.card.id)) {
+        if (props.visibleCards.includes(props.card)) {
             console.log('if true');
             card.firstElementChild.style.visibility = 'visible';
             card.style.cursor = 'default';
@@ -22,7 +22,7 @@ export function Card(props) {
 
     const handleClick = () => {
         console.log('handleClick');
-        props.addVisibleCard(props.card.id);
+        props.addVisibleCard(props.card);
     }
 
     return (

@@ -5,6 +5,7 @@ import { images } from './images/index';
 
 export function Card(props) {
 
+    // hide card image
     useEffect(() => {
         const card = document.getElementById(props.card.id);
 
@@ -17,7 +18,24 @@ export function Card(props) {
             card.firstElementChild.style.visibility = 'hidden';
             card.style.cursor = 'pointer';
         }
+
     }, [props.visibleCards]);
+
+
+    // hide whole card
+    useEffect(() => {
+        const card = document.getElementById(props.card.id);
+
+        if (props.solvedCards.includes(props.card)) {
+            card.firstElementChild.style.visibility = 'hidden';
+            card.style.visibility = 'hidden';
+            card.style.cursor = 'default';
+        } else {
+            card.style.visibility = 'visible';
+            card.style.cursor = 'pointer';
+        }
+
+    }, [props.solvedCards]);
 
 
     const handleClick = () => {

@@ -5,6 +5,10 @@ import { Card } from '../Card/Card';
 export function MemoryImages(props) {
     const [cards, setCards] = useState([]);
     const [visibleCards, setVisibleCards] = useState([]);
+    const [solvedCards, setSolvedCards] = useState([]);
+    const [activePlayer, setActivePlayer] = useState(1);
+    const [scorePlayer1, setScorePlayer1] = useState(0);
+    const [scorePlayer2, setScorePlayer2] = useState(0);
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -39,6 +43,10 @@ export function MemoryImages(props) {
     const handleClick = () => {
         createCards(props.numberOfCards);
         setVisibleCards([]);
+        setActivePlayer(1);
+        setScorePlayer1(0);
+        setScorePlayer2(0);
+        setSolvedCards([]);
     }
 
 

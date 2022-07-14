@@ -49,11 +49,49 @@ export function MemoryImages(props) {
         setSolvedCards([]);
     }
 
-
+    // hide cards again
     useEffect(() => {
-        let intervalId;
+        let hideCards;
         if (visibleCards.length === 2) {
-            intervalId = setInterval(() => setVisibleCards([]), 5000);
+            hideCards = setInterval(() => setVisibleCards([]), 3000);
+        }
+        return () => clearInterval(hideCards);
+    }, [visibleCards]);
+
+    
+    useEffect(() => {
+        if (visibleCards.length === 2) {
+
+            // check if cards have the same image
+            if (visibleCards[0].image === visibleCards[1].image) {
+
+                if (activePlayer === 1) {
+                    setScorePlayer1(prev => prev + 1);
+                } else if (activePlayer === 2) {
+                    setScorePlayer2(prev => prev + 1);
+                }
+
+                const intervalHideCards = setInterval(() => {
+                    setSolvedCards(prev => [...prev, visibleCards[0], visibleCards[1]]);
+                }, 3000);
+
+                return () => clearInterval(intervalHideCards);
+
+            } else {
+
+                let newPlayer;
+                if (activePlayer === 1) {
+                    newPlayer = 2;
+                } else {
+                    newPlayer = 1;
+                }
+                
+                const intervalSwitchPlayer = setInterval(() => {
+                    setActivePlayer(newPlayer);
+                }, 3000);
+                return () => clearInterval(intervalSwitchPlayer);
+
+            }
         }
     }, [visibleCards, activePlayer, solvedCards]);
 
@@ -62,8 +100,15 @@ export function MemoryImages(props) {
         <section id='gameApp'>
             <h2>Image Memory</h2>
             <div id='stats'>
-                visibleCards.length: {visibleCards.length}
-                <br/>
+                <div className='playerbox'>
+                    <h3>Player 1 {activePlayer === 1 ? 'has the turn.' : ''}</h3>
+                    <p>Score: {scorePlayer1}</p>
+                </div>
+                <div className='playerbox'>
+                    <h3>Player 2 {activePlayer === 2 ? 'has the turn.' : ''}</h3>
+                    <p>Score: {scorePlayer2}</p>
+                </div>
+                
                 <button onClick={handleClick}>
                     New Game
                 </button>
@@ -76,7 +121,7 @@ export function MemoryImages(props) {
                             card={card}
                             visibleCards={visibleCards}
                             addVisibleCard={addVisibleCard}
-                            removeVisibleCard={removeVisibleCard}
+                            solvedCards={solvedCards}
                         />
                     })
                 }

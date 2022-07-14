@@ -22,7 +22,7 @@ export function MemoryImages(props) {
         const array = [];
         let imageId = -1;
         for (let i = 0; i < numberOfCards; i++) {
-            if (i % 2 == 0) {
+            if (i % 2 === 0) {
                 imageId++;
             }
             array.push({
@@ -55,8 +55,7 @@ export function MemoryImages(props) {
         if (visibleCards.length === 2) {
             intervalId = setInterval(() => setVisibleCards([]), 5000);
         }
-        return () => clearInterval(intervalId);
-    });
+    }, [visibleCards, activePlayer, solvedCards]);
 
 
     return (

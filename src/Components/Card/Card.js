@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './Card.css';
 import { images } from './images/index';
 
@@ -19,7 +19,7 @@ export function Card(props) {
             card.style.cursor = 'pointer';
         }
 
-    }, [props.visibleCards]);
+    });
 
 
     // hide whole card
@@ -35,7 +35,7 @@ export function Card(props) {
             card.style.cursor = 'pointer';
         }
 
-    }, [props.solvedCards]);
+    });
 
 
     const handleClick = () => {
@@ -45,7 +45,7 @@ export function Card(props) {
 
     return (
         <div className='card' id={props.card.id} onClick={handleClick} >
-             <img src={images[props.card.image]} />
+             <img src={images[props.card.image]} alt='Background of the memory card.' />
         </div>
     )
 }

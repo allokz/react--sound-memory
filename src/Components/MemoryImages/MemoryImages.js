@@ -103,14 +103,14 @@ export function MemoryImages(props) {
                 <div className='playerbox'>
                     <div className='playername'>
                         <h3>Player 1 {activePlayer === 1 ? 'has the turn.' : ''}</h3>
-                        <button></button>
+                        <button title='Edit Player Name'></button>
                     </div>
                     <p>Score: {scorePlayer1}</p>
                 </div>
                 <div className='playerbox'>
                     <div className='playername'>
                         <h3>Player 2 {activePlayer === 2 ? 'has the turn.' : ''}</h3>
-                        <button></button>
+                        <button title='Edit Player Name'></button>
                     </div>
                     <p>Score: {scorePlayer2}</p>
                 </div>

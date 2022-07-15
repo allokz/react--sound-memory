@@ -7,7 +7,9 @@ export function MemoryImages(props) {
     const [visibleCards, setVisibleCards] = useState([]);
     const [solvedCards, setSolvedCards] = useState([]);
     const [activePlayer, setActivePlayer] = useState(1);
+    const [namePlayer1, setNamePlayer1] = useState('Player 1');
     const [scorePlayer1, setScorePlayer1] = useState(0);
+    const [namePlayer2, setNamePlayer2] = useState('Player 2');
     const [scorePlayer2, setScorePlayer2] = useState(0);
 
     function shuffle(array) {
@@ -102,14 +104,14 @@ export function MemoryImages(props) {
             <div id='stats'>
                 <div className='playerbox'>
                     <div className='playername'>
-                        <h3>Player 1 {activePlayer === 1 ? 'has the turn.' : ''}</h3>
+                        <h3>{namePlayer1} {activePlayer === 1 ? 'has the turn.' : ''}</h3>
                         <button title='Edit Player Name'></button>
                     </div>
                     <p>Score: {scorePlayer1}</p>
                 </div>
                 <div className='playerbox'>
                     <div className='playername'>
-                        <h3>Player 2 {activePlayer === 2 ? 'has the turn.' : ''}</h3>
+                        <h3>{namePlayer2} {activePlayer === 2 ? 'has the turn.' : ''}</h3>
                         <button title='Edit Player Name'></button>
                     </div>
                     <p>Score: {scorePlayer2}</p>

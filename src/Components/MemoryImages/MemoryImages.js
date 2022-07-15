@@ -101,15 +101,21 @@ export function MemoryImages(props) {
             <h2>Image Memory</h2>
             <div id='stats'>
                 <div className='playerbox'>
-                    <h3>Player 1 {activePlayer === 1 ? 'has the turn.' : ''}</h3>
+                    <div className='playername'>
+                        <h3>Player 1 {activePlayer === 1 ? 'has the turn.' : ''}</h3>
+                        <button></button>
+                    </div>
                     <p>Score: {scorePlayer1}</p>
                 </div>
                 <div className='playerbox'>
-                    <h3>Player 2 {activePlayer === 2 ? 'has the turn.' : ''}</h3>
+                    <div className='playername'>
+                        <h3>Player 2 {activePlayer === 2 ? 'has the turn.' : ''}</h3>
+                        <button></button>
+                    </div>
                     <p>Score: {scorePlayer2}</p>
                 </div>
                 
-                <button onClick={handleClick}>
+                <button className='btn-new-game' onClick={handleClick}>
                     New Game
                 </button>
             </div>

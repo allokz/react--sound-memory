@@ -1,5 +1,5 @@
 #gameApp {
-    width: 816px;
+    width: fit-content;
     margin: 0 auto;
 }
 
@@ -23,4 +23,12 @@
 
 #stats button:active {
     transform: scale(1);
+}
+
+#cards {
+    border: 10px solid #455E4E;
+    border-radius: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }

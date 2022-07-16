@@ -7,9 +7,7 @@ export function MemoryImages(props) {
     const [visibleCards, setVisibleCards] = useState([]);
     const [solvedCards, setSolvedCards] = useState([]);
     const [activePlayer, setActivePlayer] = useState(1);
-    const [namePlayer1, setNamePlayer1] = useState('Player 1');
     const [scorePlayer1, setScorePlayer1] = useState(0);
-    const [namePlayer2, setNamePlayer2] = useState('Player 2');
     const [scorePlayer2, setScorePlayer2] = useState(0);
 
     function shuffle(array) {

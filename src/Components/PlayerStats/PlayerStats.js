@@ -3,7 +3,15 @@ import './PlayerStats.css';
 import iconEdit from './edit-60.png';
 import iconDone from './done-60.png';
 
-export function PlayerStats(props) {
+    const handleClick = () => {
+        // toggle input and player name
+        document.getElementById(inputId).classList.toggle('hidden');
+        document.getElementById(playerNameId).classList.toggle('hidden');
+
+        // toggle button img
+        document.getElementById(editImageId).classList.toggle('hidden');
+        document.getElementById(doneImageId).classList.toggle('hidden');
+    }
 
     return (
         <section className='playerstats'>

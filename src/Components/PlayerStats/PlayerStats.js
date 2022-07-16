@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './PlayerStats.css';
+import iconEdit from './edit-60.png';
+import iconDone from './done-60.png';
 
 export function PlayerStats(props) {
 

@@ -3,6 +3,14 @@ import './PlayerStats.css';
 import iconEdit from './edit-60.png';
 import iconDone from './done-60.png';
 
+export function PlayerStats(props) { // props: playerId, activePlayer, score
+    const [playerName, setPlayerName] = useState('Player ' + props.playerId);
+
+    const inputId = 'input-' + props.playerId;
+    const playerNameId = 'player-' + props.playerId + '-name';
+    const editImageId = 'edit-' + props.playerId;
+    const doneImageId = 'done-' + props.playerId;
+
     const handleClick = () => {
         // toggle input and player name
         document.getElementById(inputId).classList.toggle('hidden');
@@ -16,6 +24,7 @@ import iconDone from './done-60.png';
     const handleChange = (event) => {
         setPlayerName(event.target.value);
     }
+
     return (
         <section className='playerstats'>
             <div>

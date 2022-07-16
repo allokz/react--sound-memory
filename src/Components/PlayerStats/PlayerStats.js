@@ -13,6 +13,9 @@ import iconDone from './done-60.png';
         document.getElementById(doneImageId).classList.toggle('hidden');
     }
 
+    const handleChange = (event) => {
+        setPlayerName(event.target.value);
+    }
     return (
         <section className='playerstats'>
             <div>

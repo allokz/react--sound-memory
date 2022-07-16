@@ -1,0 +1,45 @@
+.hidden {
+    display: none;
+}
+
+.playerstats div {
+    display: flex;
+    align-items: center;
+}
+
+.playerstats input {
+    width: 100px;
+    padding: 0.6rem;
+    margin: 0.75rem 0;
+
+    border: none;
+    border-radius: 5px;
+}
+
+.playerstats button {
+    width: 2rem;
+    height: 2rem;
+    box-sizing: border-box;
+    
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+
+    padding: 0.5rem;
+    margin-left: 1rem;
+
+    cursor: pointer;
+
+    background: none;
+    transition: background-color 150ms ease-in-out;
+}
+
+.playerstats button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playerstats button img {
+    width: 100%;
+    height: 100%;
+}

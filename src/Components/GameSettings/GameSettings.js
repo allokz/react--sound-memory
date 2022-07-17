@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './MemoryImages.css';
+import React, { useState } from 'react';
+import './GameSettings.css';
 
 export function GameSettings(props) {
 

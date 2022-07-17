@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { GameSettings } from '../GameSettings/GameSettings';
 import { MemoryImages } from '../MemoryImages/MemoryImages';
 
 
@@ -31,7 +32,19 @@ function App() {
                 </div>
             </header>
             <main>
-                {activeGame}
+                <div id='settings' className=''>
+                    <GameSettings
+                        startNewGame={startNewGame}
+                    />
+                </div>
+                <div id='imageMemory' className='hidden'>
+                    <MemoryImages
+                        numberOfCards={numberOfCards}
+                        player1={player1Name}
+                        player2={player2Name}
+                        switchToSettings={switchGameAndSettings}
+                    />
+                </div>
             </main>
         </div>
     );

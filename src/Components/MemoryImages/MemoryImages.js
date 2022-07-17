@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './MemoryImages.css';
+import { PlayerStats } from '../PlayerStats/PlayerStats';
 import { Card } from '../Card/Card';
 
 export function MemoryImages(props) {
@@ -100,16 +101,17 @@ export function MemoryImages(props) {
         <section id='gameApp'>
             <h2>Image Memory</h2>
             <div id='stats'>
-                <div className='playerbox'>
-                    <h3>Player 1 {activePlayer === 1 ? 'has the turn.' : ''}</h3>
-                    <p>Score: {scorePlayer1}</p>
-                </div>
-                <div className='playerbox'>
-                    <h3>Player 2 {activePlayer === 2 ? 'has the turn.' : ''}</h3>
-                    <p>Score: {scorePlayer2}</p>
-                </div>
-                
-                <button onClick={handleClick}>
+                <PlayerStats
+                    playerId={1} 
+                    activePlayer={activePlayer}
+                    score={scorePlayer1}
+                />
+                <PlayerStats
+                    playerId={2}
+                    activePlayer={activePlayer}
+                    score={scorePlayer2}
+                />
+                <button className='btn-new-game' onClick={handleClick}>
                     New Game
                 </button>
             </div>

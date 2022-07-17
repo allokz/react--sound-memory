@@ -3,6 +3,33 @@ import './GameSettings.css';
 
 export function GameSettings(props) {
 
+    const numberOfCardsMin = 20;
+    const numberOfCardsMax = 40;
+    const [gameType, setGameType] = useState('image');
+    const [numberOfCards, setNumberOfCards] = useState(20);
+    const [player1Name, setPlayer1Name] = useState('Player 1');
+    const [player2Name, setPlayer2Name] = useState('Player 2');
+
+
+    const handleSelectChange = ({ target }) => {
+        setGameType(target.value);
+    }
+
+    const handleInputRangeChange = ({ target }) => {
+        setNumberOfCards(target.value);
+    }
+
+    const handleNameChange = ({ target }) => {
+        if (target.id === 'player1-name') {
+            target.value === '' ? setPlayer1Name('Player 1') : setPlayer1Name(target.value);
+        } else if (target.id === 'player2-name') {
+            target.value === '' ? setPlayer2Name('Player 2') : setPlayer2Name(target.value);
+        }
+    }
+
+    const handleButtonClick = () => {
+        props.startNewGame(gameType, numberOfCards, player1Name, player2Name);
+    }
 
     return (
         <section id='game-settings'>

@@ -17,7 +17,7 @@ function App() {
         setPlayer1Name(player1);
         setPlayer2Name(player2);
 
-        if (gameType == 'image') {
+        if (gameType === 'image') {
             document.getElementById('imageMemory').classList.toggle('hidden');
             document.getElementById('settings').classList.toggle('hidden');
         } else if (gameType === 'music') {
@@ -26,7 +26,7 @@ function App() {
     }
 
     const switchGameAndSettings = () => {
-        if (activeGame == 'image') {
+        if (activeGame === 'image') {
             document.getElementById('imageMemory').classList.toggle('hidden');
             document.getElementById('settings').classList.toggle('hidden');
         } else if (activeGame === 'music') {

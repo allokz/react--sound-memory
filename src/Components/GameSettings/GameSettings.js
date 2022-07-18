@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import './GameSettings.css';
 
 export function GameSettings(props) {
-
     const numberOfCardsMin = 20;
     const numberOfCardsMax = 40;
     const [gameType, setGameType] = useState('image');
     const [numberOfCards, setNumberOfCards] = useState(20);
     const [player1Name, setPlayer1Name] = useState('Player 1');
     const [player2Name, setPlayer2Name] = useState('Player 2');
-
 
     const handleSelectChange = ({ target }) => {
         setGameType(target.value);

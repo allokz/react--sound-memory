@@ -4,15 +4,35 @@ import { GameSettings } from '../GameSettings/GameSettings';
 import { MemoryImages } from '../MemoryImages/MemoryImages';
 
 
-function App() {
-    const numberOfCards = 20;
-    const [activeGame, setActiveGame] = useState(null);
 
-    const imageMemory = (
-        <MemoryImages
-            numberOfCards={numberOfCards}
-        />
-    )
+function App() {
+    const [activeGame, setActiveGame] = useState(null);
+    const [numberOfCards, setNumberOfCards] = useState(0);
+    const [player1Name, setPlayer1Name] = useState(null);
+    const [player2Name, setPlayer2Name] = useState(null);
+
+    const startNewGame = (gameType, cards, player1, player2) => {
+        setActiveGame(gameType);
+        setNumberOfCards(cards);
+        setPlayer1Name(player1);
+        setPlayer2Name(player2);
+
+        if (gameType == 'image') {
+            document.getElementById('imageMemory').classList.toggle('hidden');
+            document.getElementById('settings').classList.toggle('hidden');
+        } else if (gameType === 'music') {
+            setActiveGame(musicMemory);
+        }
+    }
+
+    const switchGameAndSettings = () => {
+        if (activeGame == 'image') {
+            document.getElementById('imageMemory').classList.toggle('hidden');
+            document.getElementById('settings').classList.toggle('hidden');
+        } else if (activeGame === 'music') {
+            setActiveGame(musicMemory);
+        }
+    }
 
     const musicMemory = (
         <p>music</p>
@@ -22,14 +42,6 @@ function App() {
         <div className="App">
             <header>
                 <h1>Memory</h1>
-                <div>
-                    <button onClick={() => setActiveGame(imageMemory)}>
-                        Images
-                    </button>
-                    <button onClick={() => setActiveGame(musicMemory)}>
-                        Music
-                    </button>
-                </div>
             </header>
             <main>
                 <div id='settings' className=''>

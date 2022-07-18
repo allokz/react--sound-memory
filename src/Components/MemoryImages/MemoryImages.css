@@ -3,6 +3,47 @@
     margin: 0 auto;
 }
 
+.headline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline div {
+    display: flex;
+}
+
+.headline button {
+    display: flex;
+    align-items: center;
+
+    padding: .5rem;
+    margin-left: 1rem;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: .5rem;
+
+    background: none;
+}
+
+.headline button img {
+    height: 1.25rem;
+    margin-right: .5rem;
+}
+
+.headline button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.headline button:active {
+    transform: scale(0.95);
+}
+
+
 #stats {
     display: flex;
     justify-content: space-between;

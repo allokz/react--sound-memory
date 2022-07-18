@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './MemoryImages.css';
 import { PlayerStats } from '../PlayerStats/PlayerStats';
 import { Card } from '../Card/Card';
+import iconSettings from './settings-48.png';
+import iconPlay from './play-48.png';
 
-export function MemoryImages(props) {
+export function MemoryImages(props) { // props: numberOfCards, player1, player2
     const [cards, setCards] = useState([]);
     const [visibleCards, setVisibleCards] = useState([]);
     const [solvedCards, setSolvedCards] = useState([]);
@@ -31,7 +33,7 @@ export function MemoryImages(props) {
                 image: imageId
             });
         }
-        setCards(shuffle(array));
+        return shuffle(array);
     }
 
     function addVisibleCard(cardObj) {
@@ -41,14 +43,22 @@ export function MemoryImages(props) {
         }
     }
 
-    const handleClick = () => {
-        createCards(props.numberOfCards);
+    const handlePlayAgain = () => {
+        setCards(createCards(props.numberOfCards));
         setVisibleCards([]);
         setActivePlayer(1);
         setScorePlayer1(0);
         setScorePlayer2(0);
         setSolvedCards([]);
     }
+
+    const handleOpenSettings = () => {
+        props.switchToSettings();
+    }
+
+    useEffect(() => {
+        setCards(createCards(props.numberOfCards));
+    }, [props.numberOfCards])
 
     // hide cards again
     useEffect(() => {
@@ -99,21 +109,26 @@ export function MemoryImages(props) {
 
     return (
         <section id='gameApp'>
-            <h2>Image Memory</h2>
+            <div className='headline'>
+                <h2>Image Memory</h2>
+                <div>
+                    <button onClick={handlePlayAgain}><img src={iconPlay}/>Play Again</button>
+                    <button onClick={handleOpenSettings}><img src={iconSettings}/>Set up new Game</button>
+                </div>
+            </div>
             <div id='stats'>
                 <PlayerStats
-                    playerId={1} 
+                    playerId={1}
+                    playerName={props.player1} 
                     activePlayer={activePlayer}
                     score={scorePlayer1}
                 />
                 <PlayerStats
                     playerId={2}
+                    playerName={props.player2}
                     activePlayer={activePlayer}
                     score={scorePlayer2}
                 />
-                <button className='btn-new-game' onClick={handleClick}>
-                    New Game
-                </button>
             </div>
             <div id='cards'>
                 {

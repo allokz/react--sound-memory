@@ -40,9 +40,6 @@ function App() {
 
     return (
         <div className="App">
-            <header>
-                <h1>Memory</h1>
-            </header>
             <main>
                 <div id='settings' className=''>
                     <GameSettings

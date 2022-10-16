@@ -110,7 +110,6 @@ export function MemoryImages(props) { // props: numberOfCards, player1, player2
     return (
         <section id='gameApp'>
             <div className='headline'>
-                <h2>Image Memory</h2>
                 <div>
                     <button onClick={handlePlayAgain}><img src={iconPlay} alt=''/>Play Again</button>
                     <button onClick={handleOpenSettings}><img src={iconSettings} alt=''/>Set up new Game</button>

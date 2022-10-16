@@ -12,11 +12,11 @@ export function Card(props) {
 
         if (props.visibleCards.includes(props.card)) {
             console.log('if true');
-            card.firstElementChild.style.visibility = 'visible';
+            card.classList.add('clicked');
             card.style.cursor = 'default';
         } else {
             console.log('if false');
-            card.firstElementChild.style.visibility = 'hidden';
+            card.classList.remove('clicked');
             card.style.cursor = 'pointer';
         }
 
@@ -28,7 +28,6 @@ export function Card(props) {
         const card = document.getElementById(props.card.id);
 
         if (props.solvedCards.includes(props.card)) {
-            card.firstElementChild.style.visibility = 'hidden';
             card.style.visibility = 'hidden';
             card.style.cursor = 'default';
         } else {

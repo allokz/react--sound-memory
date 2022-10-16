@@ -98,9 +98,6 @@
 }
 
 #cards {
-    border: 10px solid #455E4E;
-    border-radius: 2rem;
-
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }

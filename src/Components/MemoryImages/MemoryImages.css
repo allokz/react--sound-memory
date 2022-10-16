@@ -3,17 +3,17 @@
     margin: 0 auto;
 }
 
-.headline {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.headline div {
+.header div {
     display: flex;
 }
 
-.headline button {
+.header button {
     display: flex;
     align-items: center;
 
@@ -30,16 +30,16 @@
     background: none;
 }
 
-.headline button img {
+.header button img {
     height: 1.25rem;
     margin-right: .5rem;
 }
 
-.headline button:hover {
+.header button:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.headline button:active {
+.header button:active {
     transform: scale(0.95);
 }
 

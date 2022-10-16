@@ -1,17 +1,16 @@
 .card {
     width: 8rem;
     height: 8rem;
-    background-color: #B9B7A7;
-    border: 0.2rem solid #A79A8B;
     border-radius: 1rem;
     margin: 1rem;
     box-sizing: border-box;
-    cursor: pointer;
 }
 
+/*
 .card img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 0.8rem;
 }
+*/

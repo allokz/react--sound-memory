@@ -45,8 +45,15 @@ export function Card(props) {
     }
 
     return (
-        <div className='card' id={props.card.id} onClick={handleClick} >
-             <img src={images[props.card.image]} alt='Background of the memory card.' />
+        <div className='card flip-card' id={props.card.id} onClick={handleClick} >
+            <div className='flip-card-inner'>
+                <div className='flip-card-front'>
+                    <img src='https://media.istockphoto.com/vectors/abstract-simple-geometric-vector-seamless-pattern-with-gold-line-on-vector-id1160720443?k=20&m=1160720443&s=612x612&w=0&h=tkTnYVL5jBOVK_wFgrixKsYzWVN7-x4AoEbg9ky7hoE=' />
+                </div>
+                <div className='flip-card-back'>
+                    <img src={images[props.card.image]} alt='Background of the memory card.' />
+                </div>
+            </div>
         </div>
     )
 }

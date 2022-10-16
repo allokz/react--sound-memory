@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './Card.css';
+import './flip-card.css';
 import { images } from './images/index';
 
 

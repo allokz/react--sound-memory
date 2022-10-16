@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PlayerStats.css';
-import iconEdit from './edit-60.png';
-import iconDone from './done-60.png';
+import iconEdit from './edit-48.png';
+import iconDone from './done-48.png';
 
 export function PlayerStats(props) { // props: playerId, activePlayer, score
     const [playerName, setPlayerName] = useState('Player ' + props.playerId);

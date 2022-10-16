@@ -1,8 +1,9 @@
 .flip-card {
-    background-color: transparent;
-    perspective: 1000px;
-    cursor: pointer;
-  }
+  background-color: transparent;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
   
 .flip-card-inner {
   position: relative;
@@ -14,6 +15,11 @@
 
 .flip-card.clicked .flip-card-inner {
   transform: rotateY(180deg);
+}
+
+.flip-card.remove {
+  transform: scale(0);
+  opacity: 0;
 }
 
 .flip-card-front {

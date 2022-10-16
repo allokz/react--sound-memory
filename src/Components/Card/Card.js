@@ -25,10 +25,12 @@ export function Card(props) {
         const card = document.getElementById(props.card.id);
 
         if (props.solvedCards.includes(props.card)) {
-            card.style.visibility = "hidden";
+            // card.style.visibility = "hidden";
+            card.classList.add('remove');
             card.style.cursor = "default";
         } else {
-            card.style.visibility = "visible";
+            //card.style.visibility = "visible";
+            card.classList.remove('remove');
             card.style.cursor = "pointer";
         }
     });

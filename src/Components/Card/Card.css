@@ -1,6 +1,6 @@
 .card {
-    width: 8rem;
-    height: 8rem;
+    width: calc((100vh - 128px - 4rem) / 4);
+    height: calc((100vh - 128px - 4rem) / 4);
     border-radius: 1rem;
     box-sizing: border-box;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MemoryImages.css';
 import { PlayerStats } from '../PlayerStats/PlayerStats';
+import { Scoreboard } from '../Scoreboard/Scoreboard';
 import { Card } from '../Card/Card';
 import iconSettings from './settings-48.png';
 import iconPlay from './play-48.png';
@@ -109,25 +110,22 @@ export function MemoryImages(props) { // props: numberOfCards, player1, player2
 
     return (
         <section id='gameApp'>
+
             <div className='header'>
                 <button onClick={handlePlayAgain}><img src={iconPlay} alt=''/>Play Again</button>
-                {/* scoreboard */}
+                <Scoreboard
+                    score={{
+                        player1: scorePlayer1,
+                        player2: scorePlayer2
+                    }}
+                    playerNames={{
+                        player1: props.player1,
+                        player2: props.player2
+                    }}
+                />
                 <button onClick={handleOpenSettings}><img src={iconSettings} alt=''/>Set up new Game</button>
             </div>
-            <div id='stats'>
-                <PlayerStats
-                    playerId={1}
-                    playerName={props.player1} 
-                    activePlayer={activePlayer}
-                    score={scorePlayer1}
-                />
-                <PlayerStats
-                    playerId={2}
-                    playerName={props.player2}
-                    activePlayer={activePlayer}
-                    score={scorePlayer2}
-                />
-            </div>
+
             <div id='cards'>
                 {
                     cards.map(card => {
@@ -141,6 +139,7 @@ export function MemoryImages(props) { // props: numberOfCards, player1, player2
                     })
                 }
             </div>
+            
         </section>
     )
 }

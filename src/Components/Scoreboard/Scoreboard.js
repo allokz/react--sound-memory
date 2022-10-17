@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Scoreboard.css';
+import iconEdit from './edit-48.png';
+import iconDone from './done-48.png';
 
 export function Scoreboard(props) {
 
